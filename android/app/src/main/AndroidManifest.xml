@@ -1,0 +1,52 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 📡 인터넷 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 📳 진동 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- 📷 카메라 권한 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- 🖼 사진 읽기 (Android 12 이하) -->
+    <uses-permission
+            android:name="android.permission.READ_EXTERNAL_STORAGE"
+            android:maxSdkVersion="32" />
+
+    <!-- 📝 사진 쓰기 (Android 10 이하에서만 허용) -->
+    <uses-permission
+            android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+            android:maxSdkVersion="29" />
+
+    <!-- 🖼 Android 13+ (API 33) 사진 접근 권한 -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <application
+            android:name=".MainApplication"
+            android:label="@string/app_name"
+            android:icon="@mipmap/ic_launcher"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:allowBackup="false"
+            android:theme="@style/AppTheme"
+            android:usesCleartextTraffic="true"
+            android:supportsRtl="true">
+
+        <activity
+                android:name=".MainActivity"
+                android:label="@string/app_name"
+                android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+                android:launchMode="singleTask"
+                android:windowSoftInputMode="adjustResize"
+                android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+    </application>
+
+</manifest>
